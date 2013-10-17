@@ -22,7 +22,6 @@
 		E6F004CC180F556C00D300B6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F004AB180F556B00D300B6 /* UIKit.framework */; };
 		E6F004D4180F556C00D300B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6F004D2180F556C00D300B6 /* InfoPlist.strings */; };
 		E6F004D6180F556C00D300B6 /* Host_Selector_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F004D5180F556C00D300B6 /* Host_Selector_DemoTests.m */; };
-		E6F004E6180F572F00D300B6 /* host_selector_build_phase.sh in Resources */ = {isa = PBXBuildFile; fileRef = E6F004E3180F572F00D300B6 /* host_selector_build_phase.sh */; };
 		E6F004E7180F572F00D300B6 /* RMSHostSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F004E5180F572F00D300B6 /* RMSHostSelector.m */; };
 		E6F004E9180F578A00D300B6 /* Hosts.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6F004E8180F578A00D300B6 /* Hosts.plist */; };
 /* End PBXBuildFile section */
@@ -58,10 +57,10 @@
 		E6F004D1180F556C00D300B6 /* Host Selector DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Host Selector DemoTests-Info.plist"; sourceTree = "<group>"; };
 		E6F004D3180F556C00D300B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E6F004D5180F556C00D300B6 /* Host_Selector_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Host_Selector_DemoTests.m; sourceTree = "<group>"; };
-		E6F004E3180F572F00D300B6 /* host_selector_build_phase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = host_selector_build_phase.sh; sourceTree = "<group>"; };
 		E6F004E4180F572F00D300B6 /* RMSHostSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMSHostSelector.h; sourceTree = "<group>"; };
 		E6F004E5180F572F00D300B6 /* RMSHostSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMSHostSelector.m; sourceTree = "<group>"; };
 		E6F004E8180F578A00D300B6 /* Hosts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Hosts.plist; sourceTree = "<group>"; };
+		E6F004F2180F756A00D300B6 /* host_selector_build_phase.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = host_selector_build_phase.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +126,7 @@
 				E6F004BC180F556B00D300B6 /* Main_iPad.storyboard */,
 				E6F004BF180F556B00D300B6 /* RMSViewController.h */,
 				E6F004C0180F556B00D300B6 /* RMSViewController.m */,
+				E6F004F1180F756A00D300B6 /* Resources */,
 				E6F004E2180F572F00D300B6 /* Source */,
 				E6F004C2180F556B00D300B6 /* Images.xcassets */,
 				E6F004AE180F556B00D300B6 /* Supporting Files */,
@@ -167,12 +167,20 @@
 		E6F004E2180F572F00D300B6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E6F004E3180F572F00D300B6 /* host_selector_build_phase.sh */,
 				E6F004E4180F572F00D300B6 /* RMSHostSelector.h */,
 				E6F004E5180F572F00D300B6 /* RMSHostSelector.m */,
 			);
 			name = Source;
 			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		E6F004F1180F756A00D300B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6F004F2180F756A00D300B6 /* host_selector_build_phase.sh */,
+			);
+			name = Resources;
+			path = ../../Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +264,6 @@
 				E6F004E9180F578A00D300B6 /* Hosts.plist in Resources */,
 				E6F004BE180F556B00D300B6 /* Main_iPad.storyboard in Resources */,
 				E6F004C3180F556B00D300B6 /* Images.xcassets in Resources */,
-				E6F004E6180F572F00D300B6 /* host_selector_build_phase.sh in Resources */,
 				E6F004BB180F556B00D300B6 /* Main_iPhone.storyboard in Resources */,
 				E6F004B2180F556B00D300B6 /* InfoPlist.strings in Resources */,
 			);
@@ -284,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}\"/../Source/host_selector_build_phase.sh";
+			shellScript = "\"${PROJECT_DIR}\"/../Resources/host_selector_build_phase.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

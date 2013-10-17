@@ -1,13 +1,13 @@
 #!/bin/sh
 
 #  host_selector_build_phase.sh
-#  FarrierSupply
 #
 #  Created by Tony Ingraldi on 10/14/13.
 #
 
 PLIST_BUDDY='/usr/libexec/PlistBuddy'
-HOSTS_PLIST_PATH="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"/Hosts.plist
+RESOURCE_PATH="${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+HOSTS_PLIST_PATH="${RESOURCE_PATH}"/Hosts.plist
 
 rms_host_key() {
     RMS_HOST_KEY="production"
@@ -42,3 +42,6 @@ fi
 
 echo "*** Hosts.plist contents ***"
 "${PLIST_BUDDY}" -c Print "${HOSTS_PLIST_PATH}"
+
+# CocoaPods processing places a copy of this script in the resource folder. Remove it.
+/bin/rm -f "${RESOURCE_PATH}"/host_selector_build_phase.sh
