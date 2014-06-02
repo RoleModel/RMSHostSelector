@@ -101,8 +101,9 @@ static NSString * const RMSHostSelectorException = @"RMSHostSelectorException";
 }
 
 - (void)doneAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    self.completionBlock(self.selectedHost);
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.completionBlock(self.selectedHost);
+    }];
 }
 
 - (NSString *)selectedHost {
