@@ -29,5 +29,7 @@ typedef void (^RMSHostSelectCompletionBlock)(NSString *selectedHost);
 @interface RMSHostSelector : UITableViewController
 
 - (void)selectHostWithBlock:(RMSHostSelectCompletionBlock)completionBlock;
+- (void)selectHostWithPresentingViewController:(UIViewController *)presentingViewController
+                                         block:(RMSHostSelectCompletionBlock)completionBlock;
 
 @end

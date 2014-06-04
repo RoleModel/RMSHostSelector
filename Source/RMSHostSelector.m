@@ -123,22 +123,28 @@ static NSString * const RMSHostSelectorException = @"RMSHostSelectorException";
 }
 
 - (void)selectHostWithBlock:(RMSHostSelectCompletionBlock)completionBlock {
+    UIApplication *application = [UIApplication sharedApplication];
+    UIWindow *keyWindow = [application keyWindow];
+    UIViewController *rootViewController = [keyWindow rootViewController];
+
+    [self selectHostWithPresentingViewController:rootViewController block:completionBlock];
+}
+
+- (void)selectHostWithPresentingViewController:(UIViewController *)presentingViewController
+                                         block:(RMSHostSelectCompletionBlock)completionBlock {
     self.completionBlock = completionBlock;
 
     if ([self hasConfiguredHost]) {
         self.completionBlock(self.configuredHost);
     } else {
-        UIApplication *application = [UIApplication sharedApplication];
-        UIWindow *keyWindow = [application keyWindow];
-        UIViewController *rootViewController = [keyWindow rootViewController];
-
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self];
 
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         }
-        [rootViewController presentViewController:navigationController animated:YES completion:NULL];
+        [presentingViewController presentViewController:navigationController animated:YES completion:NULL];
     }
+
 }
 
 #pragma mark - Table view data source
